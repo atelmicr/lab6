@@ -1,0 +1,15 @@
+<table border = "1" width = "20%">
+  <tr>
+    <td>Числа Мерсенна</td>
+    <td><%=@mersenne_array %></td>
+  </tr>
+  <tr>
+    <td>Количество чисел Мерсенна</td>
+    <td><%= @quantity %></td>
+  </tr>
+</table>
+
+<%= link_to 'Продолжить', :lab_input %>
+<%= form_tag url_for(controller: 'sessions', action: 'logout'), :method => 'get' do %>
+    <%= submit_tag 'Выйти' %>
+<% end %>

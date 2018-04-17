@@ -1,0 +1,9 @@
+<h1>Простые числа Мерсенна</h1>
+<%= form_tag url_for(controller: 'lab', action: 'output'), :method => 'get' do %>
+    <%= label_tag('Введите целое число:') %>
+    <%= text_field_tag(:n) %> <br>
+    <%= submit_tag 'OK' %>
+<% end %>
+<%= form_tag url_for(controller: 'sessions', action: 'logout'), :method => 'get' do %>
+    <%= submit_tag 'Выйти' %>
+<% end %>
