@@ -1,0 +1,8 @@
+<%= form_tag('/main/output', :method => 'get') do %>
+    <%= label_tag('Введите целое число:') %>
+    <%= text_field_tag(:n) %> <br/>
+    <%= submit_tag('OK')%>
+<% end %>
+<%= form_tag('/main/output_xml', :method => 'get') do %>
+    <%= submit_tag((:'XML'))%>
+<% end %>

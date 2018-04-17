@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  marsarr: MyString
+  marsquan: 1
+
+two:
+  marsarr: MyString
+  marsquan: 1
