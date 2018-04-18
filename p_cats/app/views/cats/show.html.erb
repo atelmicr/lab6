@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+<div align="center">
+<p>
+  <strong><h1><%= t(:"Name") %></h1></strong>
+  <%= @cat.name %>
+</p>
+
+<p>
+  <strong><h3><%= t(:"Description") %></h3></strong>
+  <%= @cat.description %>
+</p>
+
+<p>
+  <strong><h3><%= t(:"Image") %></h3></strong>
+  <%= image_tag @cat.image.url %>
+</p>
+</div>
+
+<h2><%= t(:"Comments") %></h2>
+<% @cat.comments.each do |comment| %>
+  <p>
+    <strong><%= t(:"Commenter") %></strong>
+    <%= comment.commenter %>
+  </p>
+ 
+  <p>
+    <strong><%= t(:"Comment") %></strong>
+    <%= comment.body %>
+  </p>
+  <p>
+  <%= link_to t(:'Destroy Comment'), [comment.cat, comment],
+               method: :delete,
+               data: { confirm: t(:'Are you sure?') } %>
+  </p>
+<% end %>
+
+<h2><%= t(:"Add a comment") %></h2>
+<%= form_with(model: [ @cat, @cat.comments.build ], local: true) do |form| %>
+  <p>
+    <%= form.label :commenter %><br>
+    <%= text_field_tag :commenter %> 
+  </p>
+  <p>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<%= button_to 'Edit', edit_cat_path(@cat) %> 
+<%= button_to 'Delete', @cat, method: :delete, data: { confirm: 'Are you sure?' } %> 
+<%= button_to 'Back', cats_path %>
